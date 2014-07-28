@@ -1,0 +1,45 @@
+z1.py
+-----------
+.. module:: z1
+
+.. graphviz::
+
+    digraph foo{
+       "bar" -> "bo";
+    }  
+
+.. _Introducción:
+
+Variables utilizadas
+
+.. envvar::
+    v
+
+* v["distancia"]
+* v["faros"]: Lista de faros definidos por (X,Y) p.e. v[(5,6)]['owner'] = 3
+    * '(X,Y)'
+        * 'owner' = nº entero
+        * 'position' = (X,Y), redundante
+        * 'energy' = nº entero
+        * 'connections' = [(X1,Y1),(X2,Y2),...]
+        * 'have_key' = True / False
+* v["estado"]
+
+    * ["position"] = (X,Y)
+    * ["lighthouses"] : No usado, eso se procesa en v["faro"]
+    * ["energy"] = nº entero
+    * ["score"] = nº entero
+    * ["view"] = matriz (realmente doble lista)  [y][x] 7x7 con la energía de las casillas adyacentes
+
+* v['dest']
+
+* self.errores => diccionario a los faros que han fallado y número para contar (10 jugadas desde el fallo)
+* self.jugada => Cuál es el último faro que hemos intentado conectar por si falla
+* self.turno => Se incrementa cada jugada. Ver como usar
+* self.prisa => Para a la hora de acercarnos hacerlo más rápido o más lento
+
+.. autoclass:: z1
+	:members:
+
+	.. automethod:: __init__
+

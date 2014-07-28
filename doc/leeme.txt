@@ -1,0 +1,8 @@
+Para isntalar el programa:
+
+aptitude install python-sphinx
+
+
+Para crear la documentación:
+
+make html
